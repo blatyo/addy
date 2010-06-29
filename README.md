@@ -33,27 +33,45 @@ Then use it!
       end
     end
 
+When you include addy on a class that implements inject, you don't even need to pass a value to it.
+
+    require 'addy'
+
+    class MyClass < Range
+      include Addy
+      
+      def my_awesome_adder
+        sum
+      end
+    end
+
 ### Calling It
 You can call either sum or summation. They're aliases for the same thing.
 
+Note: The following assumes Addy is included into Range.
+
 When you pass a block to sum it will execute the block on the current number before adding it to the sum.
 
-    sum(1..5) {|num| num + 1} #=> 20
+    sum(1..5) {|num| num + 1}  #=> 20
+    (1..5).sum {|num| num + 1} #=> 20
 
 You don't have to pass a block though!
 
     #this
-    sum(1..5)             #=> 15
+    sum(1..5)              #=> 15
+    #and
+    (1..5).sum             #=> 15
     
-    #is equivalent to
-    sum(1..5) {|num| num} #=> 15
+    #are equivalent to
+    sum(1..5) {|num| num}  #=> 15
+    #and
+    (1..5).sum {|num| num} #=> 15
+    
 ### Input
 Ranges and numeric arrays both work well.
 
     sum(1..5)         #=> 15
     sum([1,2,3,4,5])  #=> 15
-
-
 
 ## Note on Patches/Pull Requests
  
@@ -69,4 +87,4 @@ Ranges and numeric arrays both work well.
 
 Copyright (c) 2010 Allen Madsen. See LICENSE for details.
 
-## PS: Isn't it ridiculous how much documentation I wrote for one function?
+PS: Isn't it ridiculous how much documentation I wrote for one function?
