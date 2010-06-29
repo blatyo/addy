@@ -33,7 +33,7 @@ Then use it!
       end
     end
 
-When you include addy on a class that implements inject, you don't even need to pass a value to it.
+When you include addy on a class that implements inject, you don't even need to pass a value to it. Instead it calls sum on your class.
 
     require 'addy'
 
