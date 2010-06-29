@@ -1,16 +1,12 @@
 require 'rubygems'
 require 'rake'
 
-def get_description
-  File.read("./README.md")
-end
-
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "addy"
     gem.summary = %Q{Prettier summations in your code.}
-    gem.description = get_description
+    gem.description = %Q{Prettier summations in your code. See the github repo for more information.}
     gem.email = "blatyo@gmail.com"
     gem.homepage = "http://github.com/blatyo/addy"
     gem.authors = ["Allen Madsen"]
